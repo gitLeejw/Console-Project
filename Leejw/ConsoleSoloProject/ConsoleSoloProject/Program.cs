@@ -66,6 +66,7 @@ namespace ConsoleSoloProject
             while (true)
             {
                 Console.Clear();
+               
                 //--------------------- 랜  더 ---------------------------
                 //스테이지 파일 불러오기
                 for (int i = 0; i < MapContents.Length; i++)
@@ -119,7 +120,6 @@ namespace ConsoleSoloProject
                     }
                 }
 
-                Thread.Sleep(WAIT_TICK);
 
 
                 // 몬스터 이동
@@ -158,7 +158,8 @@ namespace ConsoleSoloProject
 
 
                 Thread.Sleep(WAIT_TICK);
-               
+                
+
 
             }// 게임 루프 끝
 

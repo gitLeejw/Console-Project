@@ -18,11 +18,29 @@ namespace ConsoleSoloProject
 
         public void MonsterMove()
         {
-            if (X < 43)
+            if (X == 13 && Y <= 9 && Y != 3)
+            {
+                Console.SetCursorPosition(X, Y--);
+                Console.Write(Icon);
+            }
+            else if ( Y == 9 && X <= 42)
+            {
+                Console.SetCursorPosition(X--, Y);
+                Console.Write(Icon);
+            }
+            else if (X == 42)
+            {
+                Console.SetCursorPosition(X, Y++);
+                Console.Write(Icon);
+
+            }
+            else if (X <= 42 && Y == 3)
             {
                 Console.SetCursorPosition(X++, Y);
                 Console.Write(Icon);
+                
             }  
+
         }
     }
 
