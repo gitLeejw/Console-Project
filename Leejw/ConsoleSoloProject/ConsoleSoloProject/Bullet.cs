@@ -12,7 +12,7 @@ namespace ConsoleSoloProject
     {
         public int X;
         public int Y;
-        public int Damage;
+        public int Damage = 4;
         public string Icon = "<";
         //public Bullet (int bulletStartTrX, int bulletStartTrY, int bulletDamage )
         //{
@@ -22,7 +22,7 @@ namespace ConsoleSoloProject
         //}
 
         public void BulletMove(int X, int Y)
-        {
+        {   
                 Console.SetCursorPosition(X, Y);
                 Console.Write(Icon);
 

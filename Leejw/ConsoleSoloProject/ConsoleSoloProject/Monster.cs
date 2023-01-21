@@ -11,6 +11,19 @@ namespace ConsoleSoloProject
         public int X;
         public int Y;
         public int Hp;
-        public string Icon = "M";
+        public int MonsterUnit = 5;
+        public string Icon = "o";
+
+
+
+        public void MonsterMove()
+        {
+            if (X < 43)
+            {
+                Console.SetCursorPosition(X++, Y);
+                Console.Write(Icon);
+            }  
+        }
     }
+
 }
