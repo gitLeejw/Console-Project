@@ -12,8 +12,9 @@ namespace ConsoleSoloProject
         public int Y = 16;
         public string Icon = "▶";
         public bool mainScene = true;
-        
-        
+        public bool gameScene = true;
+
+
 
         public void TitleScene(ConsoleKey key)
         {
@@ -49,6 +50,12 @@ namespace ConsoleSoloProject
                     mainScene = false;
                 }
             }
+        }
+
+        public void EndScene()
+        {
+            Console.Clear();
+            Console.WriteLine($"   _____                       _      _____                               _ \r\n  / ____|                     | |    / ____|                             | |\r\n | |  __    ___     ___     __| |   | |  __    __ _   _ __ ___     ___   | |\r\n | | |_ |  / _ \\   / _ \\   / _` |   | | |_ |  / _` | | '_ ` _ \\   / _ \\  | |\r\n | |__| | | (_) | | (_) | | (_| |   | |__| | | (_| | | | | | | | |  __/  |_|\r\n  \\_____|  \\___/   \\___/   \\__,_|    \\_____|  \\__,_| |_| |_| |_|  \\___|  (_)\r\n                                                                            \r\n                                                                            ");
         }
     }
 }

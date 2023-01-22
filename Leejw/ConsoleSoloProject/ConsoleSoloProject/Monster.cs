@@ -9,18 +9,15 @@ namespace ConsoleSoloProject
 {
     internal class Monster
     {
-        public int X;
-        public int Y;
-        public int Hp;
-        public int Count = 0;
-        public int Unit = 15;
+        public int X = 13;
+        public int Y = 3;
+        public int Hp = 5;
+        public int count = 0;
+        public int deathCount = 0;
+        public int unit = 15;
         public string Icon = "o";
 
-        public void MonsterNumber(int x, int y, int num)
-        {
-            Console.SetCursorPosition(x, y);
-            Console.WriteLine($"몬스터 : {num}");
-        }
+        
 
         public void MonsterMove()
         {

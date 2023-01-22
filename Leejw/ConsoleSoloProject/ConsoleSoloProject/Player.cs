@@ -12,16 +12,14 @@ namespace ConsoleSoloProject
     {
 
 
-        public int X = 44;
-        public int Y = 3;
-        public string Icon = "P";
+        public int firstPlayerX = 44;
+        public int firstPlayerY = 3;
+        public int secondPlayerX = 10;
+        public int secondPlayerY = 9;
+        public string Icon = "ㅱ";
         public UserKey userkey;
+
        
-        public void PlayerPosition()
-        {
-            Console.SetCursorPosition(X, Y);
-            Console.Write(Icon);
-        }
     }
 
 }

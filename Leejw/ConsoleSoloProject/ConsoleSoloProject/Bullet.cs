@@ -14,6 +14,7 @@ namespace ConsoleSoloProject
         public int Y;
         public int Damage;
         public string Icon = "<";
+        public string Icon2 = " > ";
         //public Bullet (int bulletStartTrX, int bulletStartTrY, int bulletDamage )
         //{
         //    this.StartTrX = bulletStartTrX;
@@ -21,7 +22,7 @@ namespace ConsoleSoloProject
         //    this.Damage = bulletDamage;
         //}
 
-        public void BulletMove(int X, int Y)
+        public void BulletMove(int X, int Y, string Icon)
         {   
                 Console.SetCursorPosition(X, Y);
                 Console.Write(Icon);
