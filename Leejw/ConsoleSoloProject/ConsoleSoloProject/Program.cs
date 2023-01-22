@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.Data;
 using System.ComponentModel.Design;
 using System.Runtime.CompilerServices;
-
 enum UserKey
 {
     None,
@@ -13,7 +12,8 @@ enum UserKey
     Right,
     Up,
     Down,
-    G
+    G,
+    R
 
 }
 
@@ -35,6 +35,8 @@ namespace ConsoleSoloProject
             //스테이지 로드
             string[] MapContents = Map.LoadStage();
 
+            //타이틀 로드
+            Scene scene = new Scene();
 
             // 텍스트 위치
             TextPosition text = new TextPosition();
@@ -67,16 +69,27 @@ namespace ConsoleSoloProject
             int playerFire = 42;
 
 
-
             const int WAIT_TICK = 1000 / 15;
+
 
             ConsoleKey key;
             key = Console.ReadKey().Key;
 
-        
-            while (false)
+            scene.TitleScene(key);
+
+
+            while (true)
             {
+
                 Console.Clear();
+                //---------------------사용자 입력------------------------
+                if (Console.KeyAvailable)
+                    key = Console.ReadKey().Key;
+                if (key == ConsoleKey.R)
+                {
+                    goto Run;
+                }
+
 
 
                 //--------------------- 랜  더 ---------------------------
@@ -125,10 +138,6 @@ namespace ConsoleSoloProject
                 }
 
 
-                //---------------------사용자 입력------------------------
-                if (Console.KeyAvailable)
-                    key = Console.ReadKey().Key;
-               
                 //---------------------업데이트 --------------------------
 
                 // 총알 업그레이드
@@ -148,11 +157,6 @@ namespace ConsoleSoloProject
                     }
                     key = ConsoleKey.Clear;
                 }
-                if (key == ConsoleKey.R)
-                {
-                    goto Run; 
-                }
-
 
                 // 총알 진행 로직
                 for (int i = 0; i < bullets.Count; i++)
@@ -209,9 +213,9 @@ namespace ConsoleSoloProject
 
 
                 Thread.Sleep(WAIT_TICK);
-                
+
             }// 게임 루프 끝
-            
+
             void StageBulider()
             {   // 맵 그리기.
                 for (int i = 0; i < MapContents.Length; i++)
@@ -234,7 +238,7 @@ namespace ConsoleSoloProject
         Run:
             Console.Clear();
 
-            
+
         }
     }
 }
