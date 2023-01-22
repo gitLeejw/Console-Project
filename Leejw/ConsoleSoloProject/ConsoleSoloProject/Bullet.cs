@@ -12,7 +12,7 @@ namespace ConsoleSoloProject
     {
         public int X;
         public int Y;
-        public int Damage = 4;
+        public int Damage;
         public string Icon = "<";
         //public Bullet (int bulletStartTrX, int bulletStartTrY, int bulletDamage )
         //{

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ConsoleSoloProject
 {
@@ -11,10 +12,15 @@ namespace ConsoleSoloProject
         public int X;
         public int Y;
         public int Hp;
-        public int MonsterUnit = 5;
+        public int Count = 0;
+        public int Unit = 15;
         public string Icon = "o";
 
-
+        public void MonsterNumber(int x, int y, int num)
+        {
+            Console.SetCursorPosition(x, y);
+            Console.WriteLine($"몬스터 : {num}");
+        }
 
         public void MonsterMove()
         {
