@@ -181,9 +181,10 @@ namespace ConsoleSoloProject
                
                 //---------------------업데이트 --------------------------
 
-
+                // 몬스터를 다 처치 했을때
                 if (monsters.Count == 0)
                 {
+                    text.stageNum++;
                     monster.count = 0;
                     monster.Hp += 2;
                     sw.Restart();
@@ -332,7 +333,7 @@ namespace ConsoleSoloProject
                 Console.SetCursorPosition(playerWeaponX, playerWeaponY);
                 Console.Write("=");
                 Console.ForegroundColor = ConsoleColor.Blue;
-                text.Position(22, 5, "스테이지 : 1");
+                text.Position(text.stageX, text.stageY, $"스테이지 : {text.stageNum}");
 
                 text.Position(text.monsterNumberX, text.monsterHpY, $"몬스터 체력 : {monster.Hp}");
                 text.Position(text.goldX, text.goldY, $"골드 : {upGrade.Gold}");

@@ -12,6 +12,10 @@ namespace ConsoleSoloProject
         public int timeX = 58;
         public int timeY = 2;
 
+        public int stageX = 22;
+        public int stageY = 5;
+        public int stageNum = 1;
+
         public int monsterNumberX = 58;
         public int monsterHpY = 3;
         public int monsterNumberY = 1;
