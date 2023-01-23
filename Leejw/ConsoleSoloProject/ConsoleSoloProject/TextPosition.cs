@@ -14,7 +14,6 @@ namespace ConsoleSoloProject
 
         public int stageX = 22;
         public int stageY = 5;
-        public int stageNum = 1;
 
         public int monsterNumberX = 58;
         public int monsterHpY = 3;
@@ -30,6 +29,8 @@ namespace ConsoleSoloProject
         public int goldTextX = 68;
         public int goldTextY = 5;
 
+        public int itemTextX = 58;
+        public int itemTextY = 9;
         public void Position(int X, int Y, string Icon)
         {
             Console.SetCursorPosition(X, Y);

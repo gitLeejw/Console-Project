@@ -23,10 +23,12 @@ namespace ConsoleSoloProject
         //}
 
         public void BulletMove(int X, int Y, string Icon)
-        {   
-                Console.SetCursorPosition(X, Y);
-                Console.Write(Icon);
+        {
+            Console.SetCursorPosition(X, Y);
+            Console.Write(Icon);
 
         }
+
+       
     }
 }

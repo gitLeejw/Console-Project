@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,17 +9,18 @@ namespace ConsoleSoloProject
 {
     internal class Scene
     {
-        public int X = 45;
-        public int Y = 16;
-        public string Icon = "▶";
-        public bool mainScene = true;
-        public bool gameScene = true;
+        public static int X = 45;
+        public static int Y = 16;
+        public static string Icon = "▶";
+        public static bool titleScene = true;
+        public static bool gameScene = true;
+        public static bool waitScene = true;
 
+        public static ConsoleKey key;
 
-
-        public void TitleScene(ConsoleKey key)
+        public static void TitleScene()
         {
-            while (mainScene)
+            while (titleScene)
             {
                 Console.Clear();
 
@@ -32,30 +34,55 @@ namespace ConsoleSoloProject
 
                 Console.SetCursorPosition(X, Y);
                 Console.WriteLine(Icon);
-                key = Console.ReadKey().Key;
 
+                TitleSceneMove();
 
-
-                if (key == ConsoleKey.UpArrow)
-                {
-                    Y = Math.Max(Y - 1, 15);
-                }
-                if (key == ConsoleKey.DownArrow)
-                {
-                    Y = Math.Min(Y + 1, 17);
-
-                }
-                if (key == ConsoleKey.RightArrow && Y == 15)
-                {
-                    mainScene = false;
-                }
             }
         }
 
-        public void EndScene()
+        public static void TitleSceneMove()
+
+
+        {
+            key = Console.ReadKey().Key;
+
+            if (key == ConsoleKey.UpArrow)
+            {
+                Y = Math.Max(Y - 1, 15);
+            }
+            if (key == ConsoleKey.DownArrow)
+            {
+                Y = Math.Min(Y + 1, 17);
+
+            }
+            if (key == ConsoleKey.Spacebar && Y == 15)
+            {
+                waitScene = true;
+                titleScene = false;
+            }
+
+        }
+
+        public static void TitleReLoad()
+        {
+            titleScene = true;
+            waitScene = true;
+
+            TitleScene();
+
+        }
+
+        public static void EndScene()
         {
             Console.Clear();
-            Console.WriteLine($"   _____                       _      _____                               _ \r\n  / ____|                     | |    / ____|                             | |\r\n | |  __    ___     ___     __| |   | |  __    __ _   _ __ ___     ___   | |\r\n | | |_ |  / _ \\   / _ \\   / _` |   | | |_ |  / _` | | '_ ` _ \\   / _ \\  | |\r\n | |__| | | (_) | | (_) | | (_| |   | |__| | | (_| | | | | | | | |  __/  |_|\r\n  \\_____|  \\___/   \\___/   \\__,_|    \\_____|  \\__,_| |_| |_| |_|  \\___|  (_)\r\n                                                                            \r\n                                                                            ");
+            waitScene = false;
+            titleScene = true;
+                Console.SetCursorPosition(0, 0);
+                Console.WriteLine($"   _____                       _      _____                               _ \r\n  / ____|                     | |    / ____|                             | |\r\n | |  __    ___     ___     __| |   | |  __    __ _   _ __ ___     ___   | |\r\n | | |_ |  / _ \\   / _ \\   / _` |   | | |_ |  / _` | | '_ ` _ \\   / _ \\  | |\r\n | |__| | | (_) | | (_) | | (_| |   | |__| | | (_| | | | | | | | |  __/  |_|\r\n  \\_____|  \\___/   \\___/   \\__,_|    \\_____|  \\__,_| |_| |_| |_|  \\___|  (_)\r\n                                                                            \r\n                                                                            ");
+                
         }
+
+
+
     }
 }

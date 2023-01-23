@@ -9,6 +9,7 @@ namespace ConsoleSoloProject
 {
     class Map
     {
+        
         public static string[] LoadStage()
         {
             //1. 경로를 구성한다.

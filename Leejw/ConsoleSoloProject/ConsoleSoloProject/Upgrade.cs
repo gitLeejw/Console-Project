@@ -9,14 +9,32 @@ namespace ConsoleSoloProject
 {
     internal class Upgrade
     {
-        public int X;
-        public int Y;
-        public int Gold = 0;
-        public int Damage = 5;
+        public static int X;
+        public static int Y;
+        public static int Gold = 0;
+        public static int Damage = 5;
+        public static int Hp = 5;
 
-        public string goldErrorText = "골드가 부족합니다.";
-        public string damageUpgradeText = "업그레이드 성공.";
+        public static string goldErrorText = "골드가 부족합니다.";
+        public static string damageUpgradeText = "업그레이드 성공.";
 
+        public void goldUpgrade(TextPosition text)
+        {
+                if (Gold >= 10)
+                {
+                    Gold -= 10;
+                    Damage++;
 
+                    text.Position(text.damageTextX, text.damageTextY, damageUpgradeText);
+
+                }
+                else
+                {
+                    text.Position(text.goldTextX, text.goldTextY, goldErrorText);
+                }
+            
+               
+        }
     }
 }
+
