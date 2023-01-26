@@ -176,8 +176,6 @@ namespace ConsoleSoloProject
                 {
                     if (bullets[i].X > 12)
                     {
-                        // 특정 좌표 도착시 총알 삭제
-
                         if (bullets[i].X == 13)
                         { bullets.RemoveAt(i); }
 
@@ -208,7 +206,7 @@ namespace ConsoleSoloProject
                     {
                         if (bullets2[i].X < 42)
                         {
-                            // 특정 좌표 도착시 총알 삭제
+                            // 특정 좌표 도착시 삭제
                             if (bullets2[i].X == 41)
                             { bullets2.RemoveAt(i); }
 
