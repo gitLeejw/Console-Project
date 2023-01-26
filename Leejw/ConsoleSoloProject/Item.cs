@@ -15,14 +15,16 @@ namespace ConsoleSoloProject
         public static bool itemFriendOnOff = false;
         public static int friendX = 12;
         public static int friendY = 9;
+
+
         public static string friendIcon = "=";
-        public static string friendMasage = "축하합니다.동료뽑기에 당첨되셨습니다.";
+        public static string friendMessage = "축하합니다.동료뽑기에 당첨되셨습니다.";
 
 
         public static bool itemPower = false;
         public static int itemPowerX = 42;
         public static int itemPowerY = 9;
-        public static string itemPowerMasage = "축하합니다. 공격력증가 뽑기에 당첨되셨습니다.";
+        public static string itemPowerMessage = "축하합니다. 공격력증가 뽑기에 당첨되셨습니다.";
 
         public static int playerWeaponY = 3;
         public static int playerFire = 42;
@@ -56,13 +58,18 @@ namespace ConsoleSoloProject
                         itemFriendOnOff = true;
 
                         Thread.Sleep(1000 / 3);
-                        Text.Position(15, 14, friendMasage);
+                        Text.Position(Text.itemMessageX, Text.itemMessageY, friendMessage);
                     }
                     else if (random.Next(250) < 8)
                     {
                         itemPower = true;
                         Thread.Sleep(1000 / 3);
-                        Text.Position(15, 14, itemPowerMasage);
+                        Text.Position(Text.itemMessageX, Text.itemMessageY, itemPowerMessage);
+                    }
+                    else
+                    {
+                        Text.Position(Text.itemMessageX+5, Text.itemMessageY, $"꽝 입니다!");
+
                     }
                 }
             }

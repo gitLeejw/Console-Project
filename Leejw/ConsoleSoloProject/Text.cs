@@ -31,6 +31,10 @@ namespace ConsoleSoloProject
 
         public static int itemTextX = 58;
         public static int itemTextY = 9;
+
+        public static int itemMessageX = 15;
+        public static int itemMessageY = 14;
+
         public static void Position(int X, int Y, string Icon)
         {
             Console.SetCursorPosition(X, Y);

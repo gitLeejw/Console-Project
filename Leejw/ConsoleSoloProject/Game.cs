@@ -340,7 +340,7 @@ namespace ConsoleSoloProject
             // 게임 루프 끝
             void StageBulider()
             {
-                string[] MapContents = Map.LoadStage();
+                string[] MapContents = File.LoadStage();
 
                 // 맵 그리기.
                 for (int i = 0; i < MapContents.Length; i++)
@@ -395,7 +395,7 @@ namespace ConsoleSoloProject
             Console.Clear();
             while (Scene.waitScene)
             {
-                //Console.Clear();
+                Console.Clear();
                 //--------------------- 랜  더 ---------------------------
                 //랜더 불러오기
                 StageBulider();
@@ -430,7 +430,7 @@ namespace ConsoleSoloProject
                 {
                     upGrade.goldUpgrade();
                     key = default;
-                    Console.Clear();
+                    
                 }
 
                 // 게임 진행
@@ -452,7 +452,7 @@ namespace ConsoleSoloProject
             }// 게임 루프 끝
             void StageBulider()
             {
-                string[] MapContents = Map.LoadStage();
+                string[] MapContents = File.LoadStage();
 
                 // 맵 그리기.
 
