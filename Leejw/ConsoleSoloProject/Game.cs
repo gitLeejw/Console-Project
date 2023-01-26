@@ -22,6 +22,7 @@ namespace ConsoleSoloProject
             Upgrade.Hp = 5;
             stage = 1;
             Item.itemFriendOnOff = false;
+            Item.itemPower = false;
             gameWait();
         }
 
@@ -77,7 +78,7 @@ namespace ConsoleSoloProject
 
             while (Scene.gameScene)
             {
-                Console.Clear();
+                //Console.Clear();
                 //--------------------- 랜  더 ---------------------------
                 //랜더 불러오기
                 StageBulider();
@@ -141,25 +142,27 @@ namespace ConsoleSoloProject
                     key = Console.ReadKey().Key;
                 }
 
+
+                //---------------------업데이트 --------------------------
+
                 // 타이틀 돌아가기
                 if (key == ConsoleKey.R)
                 {
                     Scene.titleScene = true;
                     Scene.TitleScene();
-                    //함수 다시 불러오기
+                    //함수 초기화 및 불러오기
                     ReGame();
 
                 }
 
-
-
-                //---------------------업데이트 --------------------------
 
                 // 아이템 뽑기
                 if (key == ConsoleKey.D)
                 {
                     Item.randomItem(random);
                     key = default;
+                    Thread.Sleep(1000 / 5);
+                    Console.Clear();
                 }
 
 
@@ -169,6 +172,8 @@ namespace ConsoleSoloProject
                 {
                     upGrade.goldUpgrade();
                     key = default;
+                    Thread.Sleep(1000 / 5);
+                    Console.Clear();
 
                 }
                 // 총알 진행 로직
@@ -184,12 +189,12 @@ namespace ConsoleSoloProject
                             bullets[i].BulletEffect(bullets[i].X--, bullets[i].Y, Upgrade.Icon);
                         }
 
-                        if (Upgrade.Damage > 15 && Upgrade.Damage <= 30)
+                        if (Upgrade.Damage >= 15 && Upgrade.Damage < 30)
                         {
                             bullets[i].BulletEffect(bullets[i].X--, bullets[i].Y, Upgrade.damage15);
                         }
 
-                        if (Upgrade.Damage > 30)
+                        if (Upgrade.Damage >= 30)
                         {
                             bullets[i].BulletEffect(bullets[i].X--, bullets[i].Y, Upgrade.damage30);
                         }
@@ -215,7 +220,7 @@ namespace ConsoleSoloProject
                                 bullets2[i].BulletEffect(bullets2[i].X++, bullets2[i].Y, Upgrade.Icon2);
                             }
 
-                            if (Upgrade.Damage > 15 && Upgrade.Damage <= 30)
+                             if (Upgrade.Damage >= 15 && Upgrade.Damage < 30)
                             {
                                 bullets2[i].BulletEffect(bullets2[i].X++, bullets2[i].Y, Upgrade.damage15);
                             }
@@ -340,6 +345,7 @@ namespace ConsoleSoloProject
             // 게임 루프 끝
             void StageBulider()
             {
+                Console.SetCursorPosition(0, 0);
                 string[] MapContents = File.LoadStage();
 
                 // 맵 그리기.
@@ -395,7 +401,7 @@ namespace ConsoleSoloProject
             Console.Clear();
             while (Scene.waitScene)
             {
-                Console.Clear();
+                //Console.Clear();
                 //--------------------- 랜  더 ---------------------------
                 //랜더 불러오기
                 StageBulider();
@@ -422,6 +428,8 @@ namespace ConsoleSoloProject
                 {
                     Item.randomItem(random);
                     key = default;
+                    Thread.Sleep(1000/5);
+                    Console.Clear();
                 }
 
 
@@ -430,13 +438,16 @@ namespace ConsoleSoloProject
                 {
                     upGrade.goldUpgrade();
                     key = default;
-                    
+                    Thread.Sleep(1000/5);
+                    Console.Clear();
                 }
 
                 // 게임 진행
                 if (key == ConsoleKey.Y)
                 {
                     Scene.gameScene = true;
+                    Thread.Sleep(1000 / 5);
+                    Console.Clear();
                     GamePlay();
                 }
                 // 스테이지 지나면 끝
@@ -452,6 +463,7 @@ namespace ConsoleSoloProject
             }// 게임 루프 끝
             void StageBulider()
             {
+                Console.SetCursorPosition(0, 0);
                 string[] MapContents = File.LoadStage();
 
                 // 맵 그리기.
@@ -478,7 +490,7 @@ namespace ConsoleSoloProject
                 Text.Position(Text.damageX, Text.damageY, $"공격력 : {Upgrade.Damage}");
                 Text.Position(Text.monsterNumberX, Text.monsterNumberY, $"몬스터 : {monster.deathCount}");
                 Item.FriendText();
-                Console.SetCursorPosition(0, 0);
+
 
 
             }

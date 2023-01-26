@@ -31,8 +31,9 @@ namespace ConsoleSoloProject
                 Damage++;
 
                 Text.Position(Text.damageTextX, Text.damageTextY, damageUpgradeText);
+
                 // 아이템 획득시 공격력 추가증가
-                if(Item.itemPower)
+                if (Item.itemPower)
                 {
                     Damage += 2;
                 }
@@ -43,7 +44,7 @@ namespace ConsoleSoloProject
                 Text.Position(Text.goldTextX, Text.goldTextY, goldErrorText);
             }
 
-
+           
         }
     }
 }

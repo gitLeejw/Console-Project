@@ -14,7 +14,7 @@ namespace ConsoleSoloProject
         public static string[] LoadStage()
         {
             //1. 경로를 구성한다.
-            string stageFilePath = Path.Combine("Assets", "Stage", "MapStage.txt");
+            string stageFilePath = Path.Combine("Assets", "MapStage.txt");
 
             if (false == System.IO.File.Exists(stageFilePath))
             {
