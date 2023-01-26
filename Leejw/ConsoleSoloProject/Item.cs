@@ -57,18 +57,27 @@ namespace ConsoleSoloProject
                     {
                         itemFriendOnOff = true;
 
-                        Thread.Sleep(1000 / 3);
                         Text.Position(Text.itemMessageX, Text.itemMessageY, friendMessage);
+                        Thread.Sleep(1000 / 4);
+                        Text.Position(Text.itemMessageX, Text.itemMessageY, "              ");
+
                     }
                     else if (random.Next(250) < 8)
                     {
                         itemPower = true;
-                        Thread.Sleep(1000 / 3);
                         Text.Position(Text.itemMessageX, Text.itemMessageY, itemPowerMessage);
+                        Thread.Sleep(1000 / 4);
+                        Text.Position(Text.itemMessageX, Text.itemMessageY, "                ");
+
+
                     }
                     else
                     {
-                        Text.Position(Text.itemMessageX+5, Text.itemMessageY, $"꽝 입니다!");
+
+                        Text.Position(Text.itemMessageX+5, Text.itemMessageY, "꽝 입니다! ");
+                        Thread.Sleep(1000 / 4);
+                        Text.Position(Text.itemMessageX + 5, Text.itemMessageY, "             ");
+
 
                     }
                 }
@@ -76,7 +85,11 @@ namespace ConsoleSoloProject
 
             else
             {
+
                 Text.Position(Text.goldTextX, Text.goldTextY, $"아이템 뽑기에 사용할 {Upgrade.goldErrorText}");
+                Thread.Sleep(1000 / 4);
+                Text.Position(Text.goldTextX, Text.goldTextY, "                                              ");
+
             }
         }
 

@@ -161,8 +161,7 @@ namespace ConsoleSoloProject
                 {
                     Item.randomItem(random);
                     key = default;
-                    Thread.Sleep(1000 / 5);
-                    Console.Clear();
+                    
                 }
 
 
@@ -172,8 +171,7 @@ namespace ConsoleSoloProject
                 {
                     upGrade.goldUpgrade();
                     key = default;
-                    Thread.Sleep(1000 / 5);
-                    Console.Clear();
+                    
 
                 }
                 // 총알 진행 로직
@@ -362,7 +360,10 @@ namespace ConsoleSoloProject
 
                 Text.Position(Text.stageX, Text.stageY, $"스테이지 : {stage}");
                 Text.Position(Text.monsterNumberX, Text.monsterHpY, $"몬스터 체력 : {Upgrade.Hp}");
-                Text.Position(Text.goldX, Text.goldY, $"골드 : {Upgrade.Gold}");
+                Text.Position(Text.goldX, Text.goldY, $"골드 : {Upgrade.Gold} ");
+                
+
+
 
                 // 데미지 출력
                 Text.Position(Text.damageX, Text.damageY, $"공격력 : {Upgrade.Damage}");
@@ -428,8 +429,7 @@ namespace ConsoleSoloProject
                 {
                     Item.randomItem(random);
                     key = default;
-                    Thread.Sleep(1000/5);
-                    Console.Clear();
+                    
                 }
 
 
@@ -438,8 +438,7 @@ namespace ConsoleSoloProject
                 {
                     upGrade.goldUpgrade();
                     key = default;
-                    Thread.Sleep(1000/5);
-                    Console.Clear();
+                    
                 }
 
                 // 게임 진행

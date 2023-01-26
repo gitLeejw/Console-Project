@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ConsoleSoloProject
@@ -27,10 +28,13 @@ namespace ConsoleSoloProject
         {
             if (Gold >= 10)
             {
+
                 Gold -= 10;
                 Damage++;
 
                 Text.Position(Text.damageTextX, Text.damageTextY, damageUpgradeText);
+                Thread.Sleep(1000 / 5);
+                Text.Position(Text.damageTextX, Text.damageTextY, "                  ");
 
                 // 아이템 획득시 공격력 추가증가
                 if (Item.itemPower)
@@ -42,6 +46,8 @@ namespace ConsoleSoloProject
             else
             {
                 Text.Position(Text.goldTextX, Text.goldTextY, goldErrorText);
+                Thread.Sleep(1000 / 5);
+                Text.Position(Text.goldTextX, Text.goldTextY, "                  ");
             }
 
            
