@@ -338,7 +338,7 @@ namespace ConsoleSoloProject
                     Scene.EndScene();
                 }
 
-                Thread.Sleep(WAIT_TICK);
+               Thread.Sleep(WAIT_TICK);
             }
             // 게임 루프 끝
             void StageBulider()
@@ -452,6 +452,7 @@ namespace ConsoleSoloProject
                 // 스테이지 지나면 끝
                 if (stage > 20)
                 {
+                    Console.Clear();
                     Scene.gameScene = false;
                     Scene.titleScene = false;
                     Scene.waitScene = false;
